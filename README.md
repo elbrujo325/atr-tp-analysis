@@ -1,50 +1,50 @@
-# ATR TP Distance Analysis
+# 🎯 ATR Take Profit Analysis
 
-This project analyzes how well a trading strategy places its Take Profit (TP)
-levels by comparing the **intended TP price** with the **maximum favorable
-movement (MFE)** that each trade actually experienced in the market.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE) [![Python](https://img.shields.io/badge/Python-3.11-blue.svg)](https://python.org)
 
-The objective is to quantify **how far the TP is from what the market realistically
-offered**, and evaluate whether missed profits are caused by poor entries or by
-overly ambitious TP placement.
+**MFE/MAE analysis — measures how far Take Profit is from what the market actually offered**
 
-## Motivation
-A strategy can have good entries and correct market direction, yet still underperform
-if the Take Profit is systematically placed too far from the price action.
+---
 
-This analysis focuses on answering a key question:
+## 📝 Overview
 
-> *Did the market move in favor of the trade, but fail to reach the Take Profit?*
+Analyzes whether a trading strategy's Take Profit levels are well-placed by comparing the intended TP price with the Maximum Favorable Excursion (MFE) — the best price the trade actually reached. Identifies trades where the market moved in favor but couldn't reach the TP, and filters out excessively distant TP placements.
 
-## Methodology
-For each trade, the script:
-- Computes the Average True Range (ATR) from historical OHLC data
-- Reconstructs theoretical TP and SL levels using ATR multiples
-- Measures the Market Favorable Excursion (MFE) and Adverse Excursion (MAE)
-- Computes the distance between the TP and the actual MFE
-- Expresses TP distance as both price and percentage of entry
-- Identifies and filters trades with excessively distant TP levels
-- Compares performance metrics before and after filtering
+## 🔑 Key Features
 
-## Analysis Outputs
-- Complete trade-level analysis (CSV)
-- Filtered trade dataset excluding unrealistic TP placements
-- Equity curves before and after filtering
-- Statistical comparison of performance metrics
-- Visual dashboard summarizing the full analysis
+- **ATR-based TP and SL level reconstruction**
+- **Maximum Favorable Excursion (MFE) computation**
+- **Maximum Adverse Excursion (MAE) computation**
+- **TP-MFE distance analysis (absolute and percentage)**
+- **Excessive TP distance filtering**
+- **Before/after performance comparison**
 
-## Use Case
-This tool is designed as a **post-trade diagnostic system**, useful for:
-- Evaluating TP placement quality
-- Improving risk/reward calibration
-- Refining strategy exits without modifying entry logic
 
-## Tech Stack
-- Python
-- pandas
-- numpy
-- matplotlib
+## 🚀 Quick Start
 
-## Disclaimer
-This is **not a backtest** and does not generate trading signals.
-It is a post-trade analytical tool intended for strategy evaluation and refinement.
+```bash
+git clone https://github.com/elbrujo325/atr-tp-analysis.git
+cd atr-tp-analysis
+
+pip install pandas numpy matplotlib yfinance
+
+python atr_tp_analysis.py
+```
+
+Output: CSV with trade-level analysis including MFE, MAE, TP distance, and filtered performance metrics.
+
+## 🛠️ Tech Stack
+
+Python · Pandas · NumPy · Matplotlib · yfinance
+
+## 📄 License
+
+This project is licensed under the MIT License — see [LICENSE](./LICENSE) for details.
+
+---
+
+<div align="center">
+
+*By [Henry Paolo Alfaro Sotil](https://github.com/elbrujo325) — Physicist & Data Scientist*
+
+</div>
